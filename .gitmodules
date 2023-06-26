@@ -4,3 +4,6 @@
 [submodule "SECTION-C/2019-Major-Projects"]
 	path = SECTION-C/2019-Major-Projects
 	url = https://github.com/BVRITHY/2019-Major-Projects.git
+[submodule "SECTION-C/Team_C12/Major_Project_Text_Auto-Completion_Generation"]
+	path = SECTION-C/Team_C12/Major_Project_Text_Auto-Completion_Generation
+	url = https://github.com/MahithaKalakonda/Major_Project_Text_Auto-Completion_Generation.git
