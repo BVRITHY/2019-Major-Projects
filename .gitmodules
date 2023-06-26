@@ -7,3 +7,6 @@
 [submodule "SECTION-C/Team_C12/Major_Project_Text_Auto-Completion_Generation"]
 	path = SECTION-C/Team_C12/Major_Project_Text_Auto-Completion_Generation
 	url = https://github.com/MahithaKalakonda/Major_Project_Text_Auto-Completion_Generation.git
+[submodule "SECTION-C/teamc22/Team_C22_Project"]
+	path = SECTION-C/teamc22/Team_C22_Project
+	url = https://github.com/UppadaTriveni123/Team_C22_Project.git
