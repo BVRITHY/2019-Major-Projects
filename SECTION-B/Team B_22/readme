@@ -1,1 +1,3 @@
+Stock market price data is generated in huge volume and it changes every second. Stock market is a complex and challenging system where people will either gain money or lose their entire life savings. In this work, an attempt is made for prediction of stock market trend. Novel stock price prediction on Indian market using algorithms Deep Neural Networks and XGBoost with measured accuracy in terms of RMSE. We would be using LSTM followed by Ensemble techniques to predict the stock market price on Indian stock market dataset.
+
 

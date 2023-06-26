@@ -1,0 +1,94 @@
+import java.util.*;
+public class Main{
+    String letter="";
+    public static void main(String args[]){
+        Main c=new Main();
+        Scanner sc =new Scanner(System.in);
+        String msg,ct,pt;
+        int key;
+        System.out.println("Enter the message:");
+        msg=sc.nextLine();
+        System.out.println("Enter the key:");
+        key=sc.nextInt();
+        String keyEncrypt=c.encryptAlphabet(key);
+        ct=c.encrypt(msg,keyEncrypt);
+        String keyDecrypt=c.decryptAlphabet(key);
+        pt=c.decrypt(ct,keyDecrypt);
+        System.out.println("Encrypted cipher text:"+ct);
+        System.out.println("Decrypted cipher text:"+pt);
+    }
+    String encryptAlphabet(int key){
+        StringBuilder input1 = new StringBuilder();
+        String s = "abcdefghijklmnopqrstuvwxyz";
+        String s1 = "", s2 = "", s3 = "", s4 = "",s5="",s6="",s7="";
+        for(int i = 0 ; i < 26 ; i++) {
+            s1 += s.charAt((i+key) % 26);
+        }
+        s5=s1.substring(0, s1.length()/2);
+        s6=s1.substring(s1.length()/2);
+        s7=s6+s5;
+        for(int i = 1 ; i < 26 ; i = i+2) {
+            s3 += s7.charAt(i);
+            s3 += s7.charAt(i-1);
+        }
+        for(int i = 2 ; i < 24 ; i = i+3) {
+            s4 += s3.charAt(i);
+            s4 += s3.charAt(i-1);
+            s4 += s3.charAt(i-2);
+        }
+        s4 += s3.charAt(25);
+        s4 += s3.charAt(24);
+        System.out.println(s4);
+        return s4;
+    }
+    String encrypt(String msg,String keyEncrypt){
+        String ct="";
+        for(int i=0;i<msg.length();i++){
+            int p=(msg.charAt(i)-'a');
+            if(p<0){
+                ct+=' ';
+            }
+            else{
+                ct+=keyEncrypt.charAt(p);
+            }
+            
+        }
+    return ct;
+    }
+    String decryptAlphabet(int key){
+        String s = "abcdefghijklmnopqrstuvwxyz";
+        String s1 = "", s2 = "", s3 = "", s4 = "",s5="",s6="",s7="";
+        for(int i = 2 ; i < 24 ; i = i+3) {
+            s4 += s.charAt(i);
+            s4 += s.charAt(i-1);
+            s4 += s.charAt(i-2);
+        }
+        s4 += s.charAt(25);
+        s4 += s.charAt(24);
+        for(int i = 1 ; i < 26 ; i = i+2) {
+            s3 += s4.charAt(i);
+            s3 += s4.charAt(i-1);
+        }
+        s5=s3.substring(0, s3.length()/2);
+        s6=s3.substring(s3.length()/2);
+        s7=s6+s5;
+        for(int i = 0 ; i < 26 ; i++) {
+            s1+=s7.charAt((i+26-key)%26);
+        }
+        System.out.println(s1);
+        return s1;
+    }
+    String decrypt(String ct,String keyDecrypt){
+        String pt="";
+        for(int i=0;i<ct.length();i++){
+            int p=(ct.charAt(i)-'a');
+            if(p<0){
+                pt+=' ';
+            }
+            else{
+                pt+=keyDecrypt.charAt(p);
+            }
+        }
+    return pt;
+    }
+}
