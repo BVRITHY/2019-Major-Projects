@@ -1,0 +1,36 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+.popup button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.popup button.cancel {
+    background-color: #f44336;
+}
+
+.popup input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
