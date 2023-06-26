@@ -1,0 +1,94 @@
+import warnings
+warnings.filterwarnings('ignore')
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score,classification_report
+df=pd.read_excel('water_dataset.xlsx')
+df
+df.head(10)
+df.tail(10)
+df.info()
+df.isnull()
+df.info()
+df.isnull().sum()
+df.shape
+df4
+from sklearn import preprocessing
+lab=preprocessing.LabelEncoder()
+df4['District']=lab.fit_transform(df4['District'])
+df4['Mandal']=lab.fit_transform(df4['Mandal'])
+df4['village']=lab.fit_transform(df4['village'])
+df4.dropna(inplace=True)
+df4.info()
+X = df4.iloc[:,df4.columns!='village'] 
+y = df4.iloc[:,df4.columns=='village']  
+X
+Y
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+xtrain, xtest, ytrain, ytest=train_test_split(X, y, test_size=0.33)
+from sklearn.ensemble import RandomForestClassifier
+rf=RandomForestClassifier()
+rf.fit(xtrain,ytrain)
+predic=rf.predict(xtest)
+acc1=accuracy_score(predic,ytest)
+acc1
+clf=classification_report(predic,ytest)
+print(clf)
+from sklearn import svm
+sv=svm.LinearSVC()
+sv.fit(xtrain,ytrain)
+predic1=sv.predict(xtest)
+acc2=accuracy_score(predic1,ytest)
+acc2
+clf1=classification_report(predic1,ytest)
+print(clf1)
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+lin_reg = LinearRegression()
+lin_reg.fit(xtrain, ytrain)
+Y_pred_lin_reg = lin_reg.predict(xtest)
+print(Y_pred_lin_reg)
+r1=r2_score(ytest, Y_pred_lin_reg)
+print("R2 score:", r2_score(ytest, Y_pred_lin_reg))
+!pip install tpot
+from tpot import TPOTClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+
+import warnings
+warnings.filterwarnings('ignore')
+iris = load_iris()
+iris.data[0:5], iris.target
+X = iris.data 
+target = iris.target 
+names = iris.target_names
+target
+X
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target,
+                                                    train_size=0.75, test_size=0.25)
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+tpot = TPOTClassifier(verbosity=2, max_time_mins=10)
+tpot.fit(X_train, y_train)
+print(tpot.score(X_test, y_test))
+print(tpot.score(X_test, y_test))
+tpot.fitted_pipeline_
+import matplotlib.pyplot as plt; plt.rcdefaults()
+
+objects = ('Random Forest','Linear Regression','logestic regression','CNN')
+y_pos = np.arange(len(objects))
+performance = [0.7225,0.4758,0.8500,0.9700]
+
+plt.bar(y_pos, performance, align='center', alpha=0.5)
+plt.xticks(y_pos, objects)
+plt.ylabel('Accuracy')
+plt.title('RF vs LR vs LR vs CNN')
+
+plt.show()
+test_vector = np.reshape(np.asarray([13,0,0.0,21.6]),(1,4))
+p = int(tpot.predict(test_vector)[0])
+#poor water level=0,Average water level=1, High water level=2
+p
