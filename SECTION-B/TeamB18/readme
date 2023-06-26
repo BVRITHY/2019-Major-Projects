@@ -1,3 +1,4 @@
+Project Title :- Exploratory Data Analysis Of Cosmetic Product Sales
 
 Over a period of time from 2018 to till date, some of the amazon beauty products ratings changed a lot. We aim to study the changes in the trends of the ratings and explore the reasons behind it. A starter dataset containing product features including ratings and reviews from 2018 is used in comparison with newly scraped reviews and ratings of the same products. Exploratory Data Analysis is to be done to gain insights into the dataset and BERT(Bidirectional Encoder Representations from Transformers) model to understand the sentiment of the people for the products.
 
