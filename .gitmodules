@@ -1,3 +1,6 @@
 [submodule "SECTION-C/Team C4/Voice-Style-Transfer-using-Speech-Recognition-and-Voice-Cloning"]
 	path = SECTION-C/Team C4/Voice-Style-Transfer-using-Speech-Recognition-and-Voice-Cloning
 	url = https://github.com/cherrysowmya/Voice-Style-Transfer-using-Speech-Recognition-and-Voice-Cloning.git
+[submodule "SECTION-C/2019-Major-Projects"]
+	path = SECTION-C/2019-Major-Projects
+	url = https://github.com/BVRITHY/2019-Major-Projects.git
