@@ -1,5 +1,7 @@
 Major project on Enhancing Security of Caesar cipher using Association Method.
 
+Description: The Caesar cipher is a simple encryption technique that was used by Julius Caesar to send secret messages to his allies. It works by shifting the letters in the plaintext message by a certain number of positions, known as the “shift” or “key. To enhance the security of Caesar cipher we used association method.
+
 Team members:
 1. K.Ravalika    19WH1A0557
 2. P.Sri Sindhu  19WH1A0547
