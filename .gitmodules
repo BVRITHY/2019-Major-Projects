@@ -10,3 +10,6 @@
 [submodule "SECTION-C/teamc22/Team_C22_Project"]
 	path = SECTION-C/teamc22/Team_C22_Project
 	url = https://github.com/UppadaTriveni123/Team_C22_Project.git
+[submodule "SECTION-C/Team_C1/AutomatedMCQGenerator"]
+	path = SECTION-C/Team_C1/AutomatedMCQGenerator
+	url = https://github.com/Amulya-2002/AutomatedMCQGenerator
