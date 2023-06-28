@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h2> <a href='/'> <p style = "text-align:center;">Diabetes Prediction</p></a></h2>
+<h2> RESULTS </h2>
+{% if prediction == 1%}
+<h2 style = "background-color:Tomato;">Chances of having diabetes is more, please consult a doctor! </h2>
+<img src="https://t4.ftcdn.net/jpg/01/59/92/75/360_F_159927541_IO2QsQNT67ZbjVSShiwXu14JpSfuaGPj.jpg" alt="Paris" style="width:35%;"> <br>
+{%elif prediction == 0%}
+<h2 style = "background-color:MediumSeaGreen;">No Worries! You don't have diabetes! </h2>
+<img src="https://i.dailymail.co.uk/i/pix/2015/08/29/00/2BBFC0F900000578-0-image-a-36_1440805913150.jpg" alt="Paris" style="width:50%;"> <br>
+{% endif %}
+</center>
+</body>
+</html>

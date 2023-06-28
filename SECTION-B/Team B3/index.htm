@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.registration {
+	background: #4CAF50;
+	color: white;
+	border-style: outset;
+	border-color: #0066A2;
+	height: 50px;
+	width: 100px;
+	font: bold15px arial,sans-serif;
+	text-shadow: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+</style>
+
+<title> Diabetes </title>
+<h1> <a href = '/'> <p style = "text-align:center;">Diabetes Prediction</p></a> </h1>
+<center><br>
+<div>
+<form action = "/predict"method="post">
+<label for="Pregnancies"> <b>Pregnancies: &nbsp </b></label>
+<input type = "number" step = "any" min="0" id = "Pregnancies"name = "Pregnancies" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="Glucose Level"> <b>Glucose Level: </b></label>
+<input type = "number" step = "any" min="0" id = "Glucose Level" name = "Glucose Level" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br> 
+
+<label for="Blood Pressure"> <b>Blood Pressure: </b></label>
+<input type = "number" step = "any"  min="0" name = "Blood Pressure" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="Skin Thickness"> <b>Skin Thickness: </b></label>
+<input type = "number" step = "any" min="0" name = "Skin Thickness" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="Insulin"> <b>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Insulin: </b></label>
+<input type = "number" step = "any" min="0" name = "Insulin" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="BMI"> <b>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp BMI: </b></label>
+<input type = "number" step = "any" min="0" name = "BMI" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="Diabetes PF"> <b>&nbsp &nbsp Diabetes PF: </b></label>
+<input type = "number" step = "any" min="0" name = "Diabetes PF" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br>
+
+<label for="Age"> <b>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Age: </b></label>
+<input type = "number" step = "any" min="0" name = "Age" placeholder= "Enter positive digit" required = "required" style="width: 200px;"/> <br><br>
+
+<button type="submit" class = "registration"> <b>Predict</b></button> <br>
+</center>
+</form>
+</div>
+
+</html>
