@@ -1,0 +1,97 @@
+void connectToPeripheral(){
+  BLEDevice peripheral;
+ Serial.println("- Discovering peripheral device...");
+ do
+  {
+    BLE.scanForUuid(deviceServiceUuid);
+    peripheral = BLE.available();
+  } while (!peripheral);
+  
+  if (peripheral) {
+    Serial.println("* Peripheral device found!");
+    Serial.print("* Device MAC address: ");
+    Serial.println(peripheral.address());
+    Serial.print("* Device name: ");
+    Serial.println(peripheral.localName());
+    Serial.print("* Advertised service UUID: ");
+    Serial.println(peripheral.advertisedServiceUuid());
+    Serial.println(" ");
+    BLE.stopScan();
+    controlPeripheral(peripheral);
+  }
+}
+
+void controlPeripheral(BLEDevice peripheral) {
+  Serial.println("- Connecting to peripheral device...");
+
+  if (peripheral.connect()) {
+    Serial.println("* Connected to peripheral device!");
+    Serial.println(" ");
+  } else {
+    Serial.println("* Connection to peripheral device failed!");
+    Serial.println(" ");
+    return;
+  }
+
+  Serial.println("- Discovering peripheral device attributes...");
+  if (peripheral.discoverAttributes()) {
+    Serial.println("* Peripheral device attributes discovered!");
+    Serial.println(" ");
+  } else {
+    Serial.println("* Peripheral device attributes discovery failed!");
+    Serial.println(" ");
+    peripheral.disconnect();
+    return;
+  }
+
+BLECharacteristic gestureCharacteristic = peripheral.characteristic(deviceServiceCha
+racteristicUuid);
+  if (!gestureCharacteristic) {
+    Serial.println("* Peripheral device does not have gesture_type characteristic!");
+    peripheral.disconnect();
+    return;
+  } else if (!gestureCharacteristic.canWrite()) {
+    Serial.println("* Peripheral does not have a writable gesture_type characteristic!");
+    peripheral.disconnect();
+    return;
+  }
+  
+  while (peripheral.connected()) {
+    gesture = gestureDetectection();
+
+    if (oldGestureValue != gesture) {  
+      oldGestureValue = gesture;
+      Serial.print("* Writing value to gesture_type characteristic: ");
+      Serial.println(gesture);
+      gestureCharacteristic.writeValue((byte)gesture);
+      Serial.println("* Writing value to gesture_type characteristic done!");
+      Serial.println(" ");
+    }
+  
+  }
+  Serial.println("- Peripheral device disconnected!");
+}
+  int gestureDetectection() {
+  if (APDS.gestureAvailable()) {
+    gesture = APDS.readGesture();
+
+    switch (gesture) {
+      case GESTURE_UP:
+        Serial.println("- UP gesture detected");
+        break;
+      case GESTURE_DOWN:
+        Serial.println("- DOWN gesture detected");
+        break;
+      case GESTURE_LEFT:
+        Serial.println("- LEFT gesture detected");
+        break;
+      case GESTURE_RIGHT:
+        Serial.println("- RIGHT gesture detected");
+        break;
+      default:
+        Serial.println("- No gesture detected");
+        break;
+      }
+    }
+    return gesture;
+}
