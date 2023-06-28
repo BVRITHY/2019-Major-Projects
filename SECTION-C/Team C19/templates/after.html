@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Form</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="static/css/responsive.css" rel="stylesheet" />
+  
+</head>
+<body>
+  <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="/home">
+              <span>
+                Lung Cancer Detection Using Deep Learning
+              </span>
+            </a>
+            
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a style="font-size: large; color: white;" href="/home" class="active">Home</a>
+                <a style="margin-left: 10px;font-size: large;color: white;" href="#" class="active">About</a>
+                <a style="margin-left: 10px;font-size: large;color: white;" href="/login">Signout</a>
+                
+              </div>
+            </div>
+        </div>
+        </nav>
+      </header>
+  </div>
+
+  <section class=" slider_section position-relative">
+      <div id="Customcarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h1 class="text-dark mb-5"> Your Prediction </h1>
+              <p class="text-dark"> The result is: </p>
+              <div class="upload">
+                <h3>Uploaded Image:</h3>
+             <div class="first">
+               {% if img_src %}
+               <img src="{{ img_src }}">
+                 {% endif %}
+             </div>
+            </div>
+              <br>
+            
+              <p class="text-dark"> For the given input image the  is : 
+                <span style="font-weight: 700;">{{pred_output}}</span>
+              </p>
+
+                <br />
+                <br />
+                <a href="{{ url_for('home') }}"><button class="button mt-3">Try again?</button></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <br><br>
+      </section>
+        <!-- end about section -->
+        <div class="footer_bg">
+    
+        
+            <!-- end info_section -->
+        
+            
+            <!-- footer section -->
+          </div>
+        
+          <script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+          <script type="text/javascript" src="static/js/bootstrap.js"></script>
+        
+          <script>
+            function openNav() {
+              document.getElementById("myNav").classList.toggle("menu_width");
+              document
+                .querySelector(".custom_menu-btn")
+                .classList.toggle("menu_btn-style");
+            }
+          </script>
+        </body>
+        
+        </html>
