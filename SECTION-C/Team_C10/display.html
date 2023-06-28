@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>VIOLATION DETECTION APP</title>
+    <style>
+        body {
+            background-image: url("/static/uploads/background_image_traffic.jpg");
+            background-color: #f2f2f2; /* Set the background color */
+            font-family: Arial, sans-serif; /* Set the font family */
+            color: #333333; /* Set the text color */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add some padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #008080; /* Set the heading color */
+            text-align: center;
+            margin-top: 0; /* Remove default margin */
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .helmet-button {
+            margin-top: 20px; /* Add space above the button */
+        }
+
+        .helmet-button a {
+            display: inline-block;
+            background-color: #008080; /* Set the background color of the button */
+            color: #ffffff; /* Set the text color of the button */
+            padding: 10px 20px; /* Add padding to the button */
+            text-decoration: none; /* Remove underline */
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            margin: 10px;
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="image-gallery">
+        {% for image_filename in image_filenames %}
+            <img src="{{ url_for('static', filename='uploads/Output_Frames/' + image_filename) }}" alt="{{ image_filename }}">
+        {% endfor %}
+    </div>
+    <div style="margin: 10px auto;">
+        <h1>Objects in images are detected.</h1> 
+        <p>Total Time taken is {{ message }}!!</p>
+        <p>Check in Folder {{ Output_Folder_path }}</p>
+    </div>
+
+    <div class="helmet-button">
+        <a href="http://127.0.0.1:5000/helmetdetection">Helmet Detection</a>
+    </div>
+</body>
+</html>
+
+

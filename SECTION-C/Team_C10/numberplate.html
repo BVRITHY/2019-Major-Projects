@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>VIOLATION DETECTION APP</title>
+    <style>
+        body {
+            /* background-image: url("/static/uploads/background_image_traffic.jpg"); */
+            background-color: #f2f2f2; /* Set the background color */
+            font-family: Arial, sans-serif; /* Set the font family */
+            color: #333333; /* Set the text color */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add some padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #008080; /* Set the heading color */
+            text-align: center;
+            margin-top: 0; /* Remove default margin */
+        }
+
+        .objects-button {
+            margin-top: 20px; /* Add space above the button */
+        }
+
+        .objects-button a {
+            display: inline-block;
+            background-color: #008080; /* Set the background color of the button */
+            color: #ffffff; /* Set the text color of the button */
+            padding: 10px 20px; /* Add padding to the button */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            width: 1000;
+        }
+
+        .image-gallery img {
+            margin: 10px;
+            max-width: 1000px;
+            max-height: 500px;
+        }
+
+    </style>
+</head>
+<body> 
+    <h1>Number Plates Generated</h1>   
+
+    <div>
+        {% for image_filename in image_filenames %}
+            <img src="{{ url_for('static', filename='uploads/Lisence_Plates_Folder/' + image_filename) }}" alt="{{ image_filename }}">
+        {% endfor %}
+    </div>
+
+    <div class="objects-button">
+        <a href="http://127.0.0.1:5000/superresolution">OCR</a>
+    </div>
+</body>
+</html>

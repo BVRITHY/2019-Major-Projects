@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>VIOLATION DETECTION APP</title>
+    <style>
+        body {
+            background-image: url("/static/uploads/background_image_traffic.jpg"); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+            background-size: cover; /* Adjust the background image size to cover the entire body */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-color: #f2f2f2; /* Set the background color */
+            font-family: Arial, sans-serif; /* Set the font family */
+            color: #333333; /* Set the text color */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add some padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #008080; /* Set the heading color */
+            text-align: center;
+            margin-top: 0; /* Remove default margin */
+        }
+
+        p {
+            font-size: 18px; /* Set the paragraph font size */
+            text-align: center;
+            margin-top: 0; /* Remove default margin */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from the list */
+            padding: 0; /* Remove default padding from the list */
+        }
+
+        li {
+            margin-bottom: 10px; /* Add some space between list items */
+        }
+
+        form {
+            margin-top: 20px; /* Add space between the form and previous content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px; /* Add some space below the file input field */
+        }
+
+        input[type="submit"] {
+            background-color: #008080; /* Set the background color of the submit button */
+            color: #ffffff; /* Set the text color of the submit button */
+            padding: 10px 20px; /* Add padding to the submit button */
+            border: none; /* Remove the button border */
+            cursor: pointer; /* Change the cursor to a pointer on hover */
+        }
+
+        .frames-button {
+            margin-top: 20px; /* Add space above the button */
+            display: flex;
+            justify-content: center;
+        }
+
+        .frames-button a {
+            display: inline-block;
+            background-color: #008080; /* Set the background color of the button */
+            color: #ffffff; /* Set the text color of the button */
+            padding: 10px 20px; /* Add padding to the button */
+            text-decoration: none; /* Remove underline */
+        }
+    </style>
+</head>
+<body>
+    <h1>VIOLATION DETECTION APP</h1>
+    <p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </p>
+    <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Upload">
+        </p>
+    </form>
+    {% if filename %}
+        <div style="margin: 10px auto;">
+            <video autoplay="autoplay" controls="controls" preload="preload">
+                <source src="{{ url_for('display_video', filename=filename) }}" type="video/mp4"></source>
+            </video>
+        </div>
+        <div class="frames-button">
+            <a href="http://127.0.0.1:5000/frames">Generate Frames</a>
+        </div>
+    {% endif %}
+</body>
+</html>
+
+
