@@ -1,0 +1,369 @@
+* {
+	padding:0;
+	margin:0;
+	outline:0;
+}
+body {
+	font-size:12px;
+	line-height:1.5;
+	font-family:Arial, "Trebuchet MS", sans-serif;
+	color:#000;
+	background:#fff;
+	text-align:left;
+}
+a img {
+	border:0;
+}
+a {
+	color:#08657f;
+	text-decoration:underline;
+}
+a:hover {
+	text-decoration:none;
+}
+.cl, .clear {
+	display:block;
+	height:0;
+	font-size:0;
+	line-height:0;
+	text-indent:-4000px;
+	clear:both;
+}
+a.gray {
+	color:#646464;
+	text-decoration:underline;
+}
+.shell {
+	width:902px;
+	margin:0 auto;
+}
+h2 {
+	font-size:28px;
+	font-weight:bold;
+	color:#242424;
+	padding-bottom:2px;
+}
+h3 {
+	font-size:17px;
+	font-weight:bold;
+	color:#fff;
+}
+h4 {
+	font-size:15px;
+	color:#0c556a;
+	display:block;
+	border-bottom:1px dotted #765c5c;
+	padding-bottom:8px;
+}
+h5 {
+	font-size:10px;
+	color:#08657f;
+}
+#header {
+	height:90px;
+	background:#fff;
+        text-align: center;
+}
+h1#logo {
+	float:left;
+	padding-top:19px;
+}
+h1#logo a {
+	width:247px;
+	float:left;
+	color:#313131;
+	font-weight:bold;
+	font-size:22px;
+	font-family:Arial, "Trebuchet MS", sans-serif;
+	line-height:19px;
+	text-decoration:none;
+}
+h1#logo a span {
+	display:block;
+	font-size:12px;
+	color:#646464;
+	font-weight:normal;
+	line-height:9px;
+	padding-top:8px;
+}
+.search {
+	width:200px;
+	float:right;
+	padding-top:19px;
+	padding-left:90px;
+	padding-right:1px;
+}
+.blink {
+	float:left;
+	width:156px;
+	border:0;
+	background:#9a9a9a;
+	padding:6px 0 7px 17px;
+}
+.blink {
+	color:#fef5f5;
+	font-size:12px;
+}
+.search-button {
+	float:left;
+	width:27px;
+	height:28px;
+	background:#9a9a9a url('images/search-button.gif') no-repeat 0 center;
+	border:0;
+	cursor:pointer;
+	font-size:0;
+	line-height:0;
+	text-indent:-4000px;
+}
+#navigation {
+	height:65px;
+	background:url('images/navigation-bg.gif') repeat-x 0 0;
+}
+#navigation ul {
+	list-style:none;
+	padding-top:2px;
+}
+#navigation ul li {
+	float:left;
+	display:inline;
+	position:relative;
+}
+#navigation ul li a {
+	float:left;
+	display:inline;
+	padding:2px 17px 11px 16px;
+	font-size:13px;
+	font-weight:bold;
+	line-height:50px;
+	color:#fff;
+	text-decoration:none;
+}
+#navigation ul li a.active, #navigation ul li a:hover {
+	background:#282828 url(images/nav-arrow.gif) no-repeat center bottom;
+}
+#featured {
+	height:317px;
+	background:url('images/featured-bg.gif') repeat-x 0 0;
+	padding-top:6px;
+	position:relative;
+}
+#featured .shell {
+	width:884px;
+	padding:10px 0;
+	background:#228eac;
+}
+.jcarousel-clip, .slider-carousel {
+	width:862px;
+	height:280px;
+	background:#fff;
+	margin:0 auto;
+	position:relative;
+}
+.slider-carousel ul {
+	list-style:none;
+}
+.slider-carousel ul li {
+	float:left;
+	display:inline;
+	width:860px;
+}
+.image {
+	float:left;
+	display:inline;
+	width:394px;
+	padding-top:21px;
+	padding-left:25px;
+}
+.info {
+	float:left;
+	display:inline;
+	width:350px;
+	height:235px;
+	padding:19px 0 0 54px;
+}
+.info p {
+	padding-bottom:18px;
+}
+.button-big {
+	padding-top:8px;
+}
+.button-big a {
+	width:184px;
+	height:52px;
+	float:left;
+	background:url('images/button-big.gif') no-repeat 0 0;
+	cursor:pointer;
+	font-size:0;
+	line-height:0;
+	text-indent:-4000px;
+	margin-left:-8px;
+}
+.jcarousel-prev {
+	width:86px;
+	height:66px;
+	background:url('images/jcarousel-prev.png') no-repeat 0 0;
+	position:absolute;
+	top:108px;
+	left:-51px;
+	cursor:pointer;
+}
+.jcarousel-next {
+	width:83px;
+	height:65px;
+	background:url('images/jcarousel-next.png') no-repeat 0 0;
+	position:absolute;
+	top:108px;
+	right:-51px;
+	cursor:pointer;
+}
+#main {
+	padding-top:11px;
+	padding-bottom:7px;
+}
+#main-boxes {
+	padding-bottom:8px;
+}
+#main-boxes .box {
+	width:278px;
+	height:255px;
+	float:left;
+	background:url('images/box-bg.gif') no-repeat 0 0;
+	padding-right:34px;
+	color:#646464;
+	line-height:19px;
+	position:relative;
+}
+.left-arrow {
+	width:7px;
+	height:56px;
+	background:url('images/box-left.gif') no-repeat 0 0;
+	position:absolute;
+	top:0;
+	left:-7px;
+	font-size:0;
+	line-height:0;
+	text-indent:-4000px;
+}
+#main-boxes .box h3 {
+	padding:14px 0 0 17px;
+}
+#main-boxes .box-content {
+	padding:20px 20px 0 17px;
+	height:162px;
+	overflow:hidden;
+}
+#main-boxes .box-content p {
+	padding-bottom:10px;
+}
+#main-boxes .box-last {
+	padding-right:0;
+	position:relative;
+}
+a.button-small {
+	margin-left:17px;
+	text-decoration:none;
+	background:url('images/button-arrow.gif') no-repeat left center;
+	padding-left:8px;
+}
+a:hover.button-small {
+	text-decoration:underline;
+}
+ul.link-list {
+	list-style:none;
+}
+ul.link-list li {
+	line-height:30px;
+	border-bottom:1px dotted #765c5c;
+	background:url('images/list-arrow.gif') no-repeat left center;
+	padding-left:10px;
+}
+a.rss-icon {
+	position:absolute;
+	top:12px;
+	;
+	left:87px;
+}
+ul.post-news {
+	list-style:none;
+}
+ul.post-news li {
+}
+ul.post-news li.second {
+	border-top:1px dotted #765c5c;
+	padding-top:5px;
+}
+#content {
+	float:left;
+}
+#content .box {
+	float:left;
+	display:inline;
+	width:590px;
+}
+#content .box-content {
+	text-align:justify;
+	padding-top:12px;
+}
+#content .box-content img {
+	float:left;
+	padding-right:10px;
+}
+#content p.anchor {
+	text-align:right;
+	padding-top:12px;
+}
+#sidebar {
+	float:left;
+	width:278px;
+	padding-left:33px;
+}
+#sidebar .quote {
+	width:278px;
+	height:193px;
+	background:url('images/quote-bg.gif') 0 0 no-repeat;
+	margin-top:12px;
+	color:#646464;
+	font-style:italic;
+	line-height:25px;
+}
+#sidebar .quote p {
+	width:205px;
+	height:140px;
+	padding:21px 0 0 59px;
+	overflow:hidden;
+}
+#sidebar p.author {
+	color:#0c556a;
+	font-style:normal;
+	font-weight:bold;
+	line-height:14px;
+	text-align:right;
+}
+#sidebar .author span {
+	display:block;
+	font-weight:normal;
+}
+.footer {
+	border-top:1px solid #e1e1e1;
+	padding:20px 0 18px 0;
+}
+.footer, .footer a {
+	color:#c1c1c1;
+	background:#232323;
+	text-decoration:none;
+	font-size:10px;
+}
+.footer a:hover {
+	text-decoration:none;
+}
+.footer p {
+	margin:0;
+	padding:0;
+	line-height:normal;
+}
+.footer .lf {
+	float:left;
+}
+.footer .rf {
+	float:right;
+}
